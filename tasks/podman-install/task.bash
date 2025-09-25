@@ -20,7 +20,7 @@ EOF
 systemctl --user daemon-reload
 systemctl --user start nextcloud.service
 
-mkdir ~/myrocky && cd ~/myrocky
+mkdir -p ~/myrocky && cd ~/myrocky
 echo "Welcome to Rocky" > index.html
 
 cat <<EOF > Dockerfile
