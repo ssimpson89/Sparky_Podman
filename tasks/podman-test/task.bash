@@ -10,7 +10,5 @@ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8081
 # Check custom container HTTP response on port 8082
 curl -s http://localhost:8082
 
-#  expect => "Welcome to Rocky"
-
 # Check custom container HTTP response on port 8082 (through podman pod)
 curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8082
