@@ -1,7 +1,5 @@
 #!/bin/bash -
 
-
-
 set -e
 
 sudo dnf install podman -y
