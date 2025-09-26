@@ -57,4 +57,4 @@ podman create --pod nextcloud --name nextcloud-db -e POSTGRES_HOST_AUTH_METHOD=t
 
 podman pod start nextcloud
 
-sleep 10
+sleep 15
