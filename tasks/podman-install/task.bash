@@ -6,6 +6,14 @@ sudo dnf install podman -y
 sudo dnf install epel-release -y
 sudo dnf install podman-compose -y
 
+# required for idempotence
+# multiple runs
+
+podman pod stop --all
+podman stop --all
+podman rm -a -f
+podman pod rm -a -f
+
 podman run -d -p 8080:80 docker.io/library/nextcloud:latest
 
 mkdir -p ~/.config/containers/systemd
@@ -48,3 +56,5 @@ podman create --pod nextcloud --name nextcloud-app docker.io/library/nextcloud:l
 podman create --pod nextcloud --name nextcloud-db -e POSTGRES_HOST_AUTH_METHOD=trust docker.io/library/postgres:latest
 
 podman pod start nextcloud
+
+sleep 10
